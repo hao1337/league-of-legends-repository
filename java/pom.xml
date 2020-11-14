@@ -47,11 +47,11 @@
                         <mapping>
                             <directory>/apps/bunny/classes</directory>
                             <filemode>440</filemode>
-                            <sources>
-                                <source>
-                                    <location>target/classes</location>
-                                </source>
-                            </sources>
+<!--                            <sources>-->
+<!--                                <source>-->
+<!--                                    <location>target/classes</location>-->
+<!--                                </source>-->
+<!--                            </sources>-->
                         </mapping>
                     </mappings>
                 </configuration>
