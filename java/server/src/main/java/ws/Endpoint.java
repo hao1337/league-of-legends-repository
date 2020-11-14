@@ -11,9 +11,14 @@ public class Endpoint {
 //    public BasicStringJson basicStringJson() {
 //        return BasicStringJson;
 //    }
-
     @GET
     public String basicStringJson() {
         return "MATTHEW";
+    }
+
+    @GET
+    @Path("hi")
+    public String basicStringJson1() {
+        return "other string";
     }
 }

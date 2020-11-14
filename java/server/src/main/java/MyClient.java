@@ -11,7 +11,7 @@ public class MyClient {
         ClientConfig clientConfig = new ClientConfig();
         Client client = ClientBuilder.newBuilder().withConfig(clientConfig).build();
 
-        WebTarget resouce = client.target("http://10.11.170.144:8000/ep2");
+        WebTarget resouce = client.target("https://na1.api.riotgames.com/lol/summoner/v4/summoners/by-name/mrswagbagtag");
         Response response = resouce.request(MediaType.APPLICATION_JSON).get();
 
         String ret = response.readEntity(String.class);
