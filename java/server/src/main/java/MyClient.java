@@ -1,18 +1,26 @@
 import org.glassfish.jersey.client.ClientConfig;
+import org.glassfish.jersey.logging.LoggingFeature;
 
 import javax.ws.rs.client.Client;
 import javax.ws.rs.client.ClientBuilder;
 import javax.ws.rs.client.WebTarget;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 public class MyClient {
     public static void main(String[] args) {
         ClientConfig clientConfig = new ClientConfig();
+//        clientConfig.register(new LoggingFeature(Logger.getLogger(LoggingFeature.DEFAULT_LOGGER_NAME), Level.INFO, LoggingFeature.Verbosity.PAYLOAD_ANY, 10000));
         Client client = ClientBuilder.newBuilder().withConfig(clientConfig).build();
 
-        WebTarget resouce = client.target("https://na1.api.riotgames.com/lol/summoner/v4/summoners/by-name/mrswagbagtag");
-        Response response = resouce.request(MediaType.APPLICATION_JSON).get();
+
+        WebTarget resouce =
+                client.target("https://na1.api.riotgames.com/lol/summoner/v4/summoners/by-name/mrswagbagtag");
+        Response response = resouce.request(MediaType.APPLICATION_JSON)
+                .header("X-Riot-Token", "RGAPI-d152e4c2-ec12-45ed-9070-cfc06c25cb71")
+                .get();
 
         String ret = response.readEntity(String.class);
         if (response.getStatus() != 200) {
