@@ -1,3 +1,4 @@
+import com.google.gson.Gson;
 import org.glassfish.jersey.client.ClientConfig;
 import org.glassfish.jersey.logging.LoggingFeature;
 
@@ -27,6 +28,10 @@ public class MyClient {
             throw new RuntimeException("Failed HTTP error code: " + response.getStatus() + ", " + ret);
 
         }
+
+        Gson gson = new Gson();
+        Player p = gson.fromJson(ret,Player.class);
         System.out.println(ret);
+        System.out.println(p);
     }
 }

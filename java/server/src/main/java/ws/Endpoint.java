@@ -13,7 +13,13 @@ public class Endpoint {
 //    }
     @GET
     public String basicStringJson() {
-        return "MATTHEW";
+        return "JAYSON";
+    }
+
+    @GET
+    @Path("hi")
+    public String basicStringJson2() {
+        return "JAYSON2";
     }
 
     @GET
