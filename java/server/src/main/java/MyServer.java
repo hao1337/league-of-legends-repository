@@ -1,12 +1,14 @@
 import org.eclipse.jetty.server.Server;
 import org.eclipse.jetty.servlet.ServletContextHandler;
 import org.eclipse.jetty.servlet.ServletHolder;
+import org.glassfish.jersey.server.ServerProperties;
+import org.glassfish.jersey.servlet.ServletContainer;
 
 public class MyServer {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws Exception {
         System.out.println("hello world");
         Server server = new Server(8000);
-        ServletContextHandler restContext = new ServletContextHandler(ServletContextHandler.Sessions);
+        ServletContextHandler restContext = new ServletContextHandler(ServletContextHandler.SESSIONS);
         {
             restContext.setContextPath("/");
 
