@@ -1,3 +1,5 @@
+package dumbun;
+
 public class Player {
     String id;
     String accountId;
@@ -9,7 +11,7 @@ public class Player {
 
     @Override
     public String toString() {
-        return "Player{" +
+        return "dumbun.Player{" +
                 "id='" + id + '\'' +
                 ", accountId='" + accountId + '\'' +
                 ", puuid='" + puuid + '\'' +

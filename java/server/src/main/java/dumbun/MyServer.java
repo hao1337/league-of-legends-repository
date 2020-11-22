@@ -1,3 +1,5 @@
+package dumbun;
+
 import org.eclipse.jetty.server.Server;
 import org.eclipse.jetty.servlet.ServletContextHandler;
 import org.eclipse.jetty.servlet.ServletHolder;
@@ -13,7 +15,7 @@ public class MyServer {
             restContext.setContextPath("/");
 
             ServletHolder servlet = new ServletHolder(new ServletContainer());
-            servlet.setInitParameter(ServerProperties.PROVIDER_PACKAGES, "ws"); // add in packages
+            servlet.setInitParameter(ServerProperties.PROVIDER_PACKAGES, "dumbun/ws"); // add in packages
             servlet.setInitOrder(1);
             restContext.addServlet(servlet, "/*"); // make endpoints that don't exist return nothing
         }

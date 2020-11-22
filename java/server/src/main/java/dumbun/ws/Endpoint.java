@@ -1,4 +1,4 @@
-package ws;
+package dumbun.ws;
 
 import javax.ws.rs.GET;
 import javax.ws.rs.Path;
@@ -23,7 +23,7 @@ public class Endpoint {
     }
 
     @GET
-    @Path("hi")
+    @Path("hi2")
     public String basicStringJson1() {
         return "other string";
     }
