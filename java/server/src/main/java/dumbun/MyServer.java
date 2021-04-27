@@ -8,7 +8,7 @@ import org.glassfish.jersey.servlet.ServletContainer;
 
 public class MyServer {
     public static void main(String[] args) throws Exception {
-        System.out.println("hello world");
+        System.out.println("hello world2");
         Server server = new Server(8000);
         ServletContextHandler restContext = new ServletContextHandler(ServletContextHandler.SESSIONS);
         {
